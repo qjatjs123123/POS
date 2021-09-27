@@ -66,3 +66,6 @@ https://user-images.githubusercontent.com/74814641/134853896-6a3816b4-80f6-445d-
 
 ### 메뉴 주문 및 주방 페이지 출력
 https://user-images.githubusercontent.com/74814641/134854879-1af6acc2-bd6a-4844-b899-c49ff1f1fc46.mp4
+
+### 매출 관리
+https://user-images.githubusercontent.com/74814641/134855675-d5f6e701-9473-4e16-a11b-844a9df4f51d.mp4
