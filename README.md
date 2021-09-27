@@ -42,3 +42,25 @@ C-2021-035554
 
 ### 관리자 모드
 ![image](https://user-images.githubusercontent.com/74814641/134852203-f42fde9d-3fc7-4d34-aa83-dec0169283bd.png)
+
+## 기능 설명(영상)
+### 주요 기능
+1. 회원가입 
+2. ID찾기
+3. PW찾기
+4. 메뉴 주문
+5. 주문한 메뉴 주방 페이지에 출력
+6. 관리자 모드에서 메뉴 관리 및 매출 관리
+
+### 회원가입 - ID 중복체크는 AJAX를 이용하여 구현, 비밀번호 형식체크 구현
+https://user-images.githubusercontent.com/74814641/134852994-59197d86-b108-49dc-97a9-36f6a9cd063c.mp4
+
+### ID찾기
+https://user-images.githubusercontent.com/74814641/134853186-27d9b725-093d-4385-b3ad-da9fb094c3d6.mp4
+
+### PW찾기
+https://user-images.githubusercontent.com/74814641/134853370-08e880f1-339d-4112-be81-fd995bb43bc5.mp4
+
+### 관리자 모드 및 메뉴 주문 - IMGUR API를 통해 이미지를 DB에 저장
+https://user-images.githubusercontent.com/74814641/134853896-6a3816b4-80f6-445d-b43a-a9b9e0af3e69.mp4
+
