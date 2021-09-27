@@ -25,3 +25,20 @@ C-2021-035554
 8. 관리자는 관리자 모드에서 매출 정보를 년/월/일 별로 확인 한다.
 
 ## 페이지 이미지
+### 로그인 페이지
+![image](https://user-images.githubusercontent.com/74814641/134851813-b3d81f58-20b7-46fc-a85d-bdbf14e65901.png)
+
+### 모드 선택 페이지
+![image](https://user-images.githubusercontent.com/74814641/134852263-b2feb47f-9531-42ae-af89-df5eb3c17306.png)
+
+### 주방 페이지
+![image](https://user-images.githubusercontent.com/74814641/134851982-cb5469d4-8e89-4e37-8e7d-fa3dc22e088a.png)
+
+### 테이블 페이지
+![image](https://user-images.githubusercontent.com/74814641/134852057-ae673ce5-c9bf-4c4d-ba6c-cb0f7692f7e2.png)
+
+### 메뉴판 페이지
+![image](https://user-images.githubusercontent.com/74814641/134852098-8b761aba-c2d0-4974-9bac-f18fd53f0ee1.png)
+
+### 관리자 모드
+![image](https://user-images.githubusercontent.com/74814641/134852203-f42fde9d-3fc7-4d34-aa83-dec0169283bd.png)
