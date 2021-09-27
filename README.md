@@ -64,3 +64,5 @@ https://user-images.githubusercontent.com/74814641/134853370-08e880f1-339d-4112-
 ### 관리자 모드 및 메뉴 주문 - IMGUR API를 통해 이미지를 DB에 저장
 https://user-images.githubusercontent.com/74814641/134853896-6a3816b4-80f6-445d-b43a-a9b9e0af3e69.mp4
 
+### 메뉴 주문 및 주방 페이지 출력
+https://user-images.githubusercontent.com/74814641/134854879-1af6acc2-bd6a-4844-b899-c49ff1f1fc46.mp4
