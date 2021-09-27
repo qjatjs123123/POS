@@ -1,0 +1,108 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>회원가입양식</title>
+    <style>
+		body{
+			text-align : center;
+			hegiht: 100%;
+			background-color: whitesmoke;
+		}
+		header{
+			color: firebrick;
+		    text-align: center;
+		    font-size: x-large;
+		    height: 110px;
+		    padding-top: 50px;
+		    padding-bottom: 60px;	
+		}
+		label{
+			text-align : left;	
+		}
+		section{
+			text-align : left;
+			font-size : large;
+			width : 400px;
+			margin: 0 auto;
+			paddiing-left : 20px;
+		}
+		.center{
+			height: 40px;
+		    width: 400px;
+		    font-size: medium;
+		    margin: 0 auto;
+		    font-weight: bolder;	
+		}
+		.center1 {
+			height: 40px;
+		    width: 400px;
+		    font-size: medium;
+		    margin: 0 auto;
+		    font-weight: bolder;
+		}
+		.center2{
+			height: 10px;
+		    width: 400px;
+		    font-size: small;
+		    color: red;
+		}
+		#input{
+			width:410px;
+			height:50px;
+			
+			background-color:firebrick;
+			font-size:larger;
+			color:white;	
+		}
+		form{
+			text-align : center;
+			margin : auto;
+		}
+    </style>
+    <script type="text/javascript" src="회원가입양식.js"></script>
+    
+</head>
+<body>
+    <header><h1>회원가입</h1></header>
+
+    <section>
+
+        <label class="center1">아이디<br>
+        <input id="text1" class="center" type="text" size="50" onblur="id_check()"></label>
+        <p id="id" class="center2"></p>
+        
+        <label class="center1">비밀번호<br>
+        <input id="text2" class="center" type="password" size="50" onchange="fc2()"/></label>
+        <p id="password" class="center2"></p>
+        
+
+        <label class="center1">비밀번호 재확인<br>
+        <input id="text3" class="center" type="password" size="50" onchange="fc3()"/></label>
+        <p id="passwordcheck" class="center2"></p>
+
+        <label class="center1">이름 <br>
+        <input id="text4" class="center" type="text" size="50" onchange="fc4()"/></label>
+        <p id="name" class="center2"></p>
+
+        <label class="center1">이메일 <br>
+        <input class="center" id = "email" type="text" size="50" onchange="fc1()" /></label>
+        <p id="emailp" class="center2"></p>
+      
+		<br>
+        <form action="로그인.html" method="get">
+            <input id = "input" type="button" onclick="fc5()" value="가입하기">
+        </form>
+       
+    </section>
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

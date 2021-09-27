@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>로그인</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
+        }
+
+        article {
+            width: 350px;
+            height: 400px;
+            font-family: system-ui, serif;
+            font-size: 2rem;
+            padding: 3rem;
+            padding-top: 0px;
+            border-radius: 1rem;
+            text-align: center;
+            vertical-align: text-bottom;
+            background: white;
+            border: 1px solid gray;
+            
+        }
+
+        a {
+           
+            font-size: 15px;
+        }
+
+        form {
+            background-color: whitesmoke;
+            border-radius: 15px;
+            padding: 20px;
+            font-size:10px;
+            background-color: powderblue;
+        }
+        #id {
+            margin-top:25px;
+            width: 250px;
+            font-size: 15px;
+            height:40px;
+        }
+        #passwd{
+            margin-top:25px;
+            width: 250px;
+            font-size: 15px;
+            height:40px;
+        }
+        #lbl1{
+           font-size:medium;
+           left:50%;
+           font-weight:400;
+           margin-left:-125px;
+           position:absolute;
+            
+        }
+        #lbl2{
+           font-size:medium;
+           left:50%;
+           font-weight:400;
+           margin-left:-125px;
+           position:absolute;
+        }
+        #btn{
+            width: 100px;
+            font-size: 15px;
+            height:40px;
+        }
+    </style>
+    <script>
+
+    var request = null;
+    var id = "";
+    function createRequest(){
+    	try{
+    		request = new XMLHttpRequest();
+    	} catch(failed) {
+    		request = null;
+    	}
+    	if(request == null)
+    		alert("Error creating request object!");
+    }
+
+    function comma(num){
+        var len, point, str; 
+           
+        num = num + ""; 
+        point = num.length % 3 ;
+        len = num.length; 
+       
+        str = num.substring(0, point); 
+        while (point <  len) { 
+            if (str != "") str += ","; 
+            str += num.substring(point, point + 3); 
+            point += 3; 
+        } 
+         
+        return str;
+     
+    }
+
+
+    function login(){
+    	createRequest();
+    	id = document.getElementById('id').value;
+    	var ps = document.getElementById('passwd').value;
+    	var url = "main.jsp";
+    	var qry = "id="+id+"&ps="+ps;
+    	
+    	request.open("POST", url, true);
+    	request.onreadystatechange = link;
+    	
+    	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    	request.send(qry);
+    }
+    function link(){
+    	if(request.readyState == 4  && request.status == 200){
+    		var check = request.responseText;
+    		if(check.trim() == "t"){
+    			location.href = "4모드선택페이지.html"+"?id="+id;
+    		}
+    		else{
+    			alert("아이디와 비밀번호를 확인해주세요");
+    		}
+    	}	
+    }
+    </script>
+
+</head>
+<body>
+    <section>
+        <article>
+            <h3>BS-POS 로그인</h3>
+            <form action="main.jsp" method="post">
+                <label id="lbl1">아이디</label>
+                <input type='text' name='id' id='id' placeholder="ID"><br><br />
+                
+                <label id="lbl2">비밀번호</label>
+                <input type='password' name='ps' id='passwd' placeholder="PASSWORD"><br><br /><br />
+                <input type='button' id="btn" value="로그인" onclick="login()">
+            </form>
+            <a href="회원가입.html">회원가입</a>
+            <a href="아이디찾기.html">아이디 찾기</a>
+            <a href="비밀번호찾기(입력).html">비밀번호 찾기</a>
+        </article>
+    </section>
+</body>
+</html>
+
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<style>
+body{
+background-color: whitesmoke;
+}
+#passwd_find{
+width: 500px;
+height: 120px;
+border:1px solid;
+text-align:center;
+margin:0 auto;
+left:50%;
+margin-left:-255px;
+position:absolute;
+margin-top:160px;
+
+}
+#id_article{
+margin:0 auto;
+left:50%;
+margin-left:-255px;
+position:absolute;
+background-color: #D4C2AA;
+width: 125px;
+height: 50px;
+cursor:pointer;
+
+
+}
+#pwd_article{
+margin:0 auto;
+left:50%;
+margin-left:-135px;
+position:absolute;
+background-color: #D4C2AA;
+width: 125px;
+height: 50px;
+cursor:pointer;
+color:red;
+
+}
+
+
+header{
+background-color: #D4C2AA;
+height: 65px; 
+width: 100%;
+}
+
+#infor_text{
+width: 500px;
+height: 100px;
+margin:0 auto;
+left:50%;
+margin-left:-255px;
+position:absolute;
+margin-top:65px;
+
+}
+</style>
+
+<script>
+function over(num){
+	id_article = document.getElementById("id_article");
+	pwd_article = document.getElementById("pwd_article");
+	
+	if(num == 1){
+		id_article.style.color="red";
+		pwd_article.style.color="black";
+	}
+	else if(num == 2){
+		id_article.style.color="black";
+		pwd_article.style.color="red";
+	}
+	
+	
+}
+function out(){
+	pwd_article = document.getElementById("pwd_article");
+	id_article = document.getElementById("id_article");
+	pwd_article.style.color="red";
+	
+	
+	id_article.style.color="black";
+}
+function gopage(){
+	location.href = "아이디찾기.html";
+}
+
+</script>
+
+<body>
+<header>
+<article id=id_article onmouseover="over(1)" onmouseout="out()" onclick="gopage()">
+<br>
+아이디 찾기
+</article >
+<article id=pwd_article onmouseover="over(2)">
+<br>
+비밀번호 찾기
+</article>
+</header>
+
+<section id="infor_text" >
+<br>
+<span style="font-weight:bolder;" >
+비밀번호 찾기
+<hr>
+</span>
+
+<span style="font-size:13px;">비밀번호를 찾고자 하는 아이디를 입력해주세요 </span>
+
+</section>
+
+<section id="passwd_find">
+
+<br>
+<form method="post", action="비밀번호찾기.jsp">
+<input type="text" name="id" placeholder="아이디를 입력해주세요" style="width:300px;height:30px; border-radius:5px;"><p>
+<input type ="submit" value="찾기" style="width:50px;height:30px;">
+
+</form>
+</section>
+</body>
+</html>

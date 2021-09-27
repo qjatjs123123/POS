@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>아이디 찾기</title>
+    <script>
+        var xmlhttp = false;
+        function over(num) {
+            id_article = document.getElementById("id_article");
+            pwd_article = document.getElementById("pwd_article");
+
+            if (num == 1) {
+                id_article.style.color = "red";
+                pwd_article.style.color = "black";
+            }
+            else if (num == 2) {
+                id_article.style.color = "black";
+                pwd_article.style.color = "red";
+            }
+
+
+        }
+        function out() {
+            pwd_article = document.getElementById("pwd_article");
+            id_article = document.getElementById("id_article");
+            pwd_article.style.color = "black";
+
+
+            id_article.style.color = "red";
+        }
+        function id_find() {
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            xmlhttp = new XMLHttpRequest();
+            var url = "아이디찾기.jsp?name=" + name + "&email=" + email;
+            xmlhttp.open("GET", url, true);
+            xmlhttp.onreadystatechange = updatePage;
+            xmlhttp.send(null);
+        }
+        function updatePage() {
+            var result = document.getElementById('result');
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                result.innerHTML = xmlhttp.responseText;
+            }
+        }
+        function gopage() {
+            location.href = "비밀번호찾기(입력).html"
+        }
+    </script>
+
+
+    <style>
+        header {
+            background-color: #D4C2AA;
+            height: 65px;
+            width: 100%;
+        }
+
+        body {
+            background-color: whitesmoke;
+        }
+
+        .id_find {
+            width: 500px;
+            height: 230px;
+            border: 1px solid;
+            text-align: center;
+            margin: 0 auto;
+            left: 50%;
+            margin-left: -255px;
+            position: absolute;
+            margin-top: 160px;
+        }
+
+        #id_article {
+            margin: 0 auto;
+            left: 50%;
+            margin-left: -255px;
+            position: absolute;
+            background-color: #D4C2AA;
+            width: 125px;
+            height: 50px;
+            cursor: pointer;
+            color: red;
+        }
+
+        #pwd_article {
+            margin: 0 auto;
+            left: 50%;
+            margin-left: -135px;
+            position: absolute;
+            background-color: #D4C2AA;
+            width: 125px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        header {
+            background-color: #D4C2AA;
+            height: 65px;
+            width: 100%;
+        }
+
+        .name {
+            margin-top: 20px;
+            width: 300px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        #infor_text {
+            width: 500px;
+            height: 100px;
+            margin: 0 auto;
+            left: 50%;
+            margin-left: -255px;
+            position: absolute;
+            margin-top: 65px;
+        }
+
+        .go_main {
+            width: 500px;
+            height: 180px;
+            text-align: center;
+            margin: 0 auto;
+            left: 50%;
+            margin-left: -255px;
+            position: absolute;
+            margin-top: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <article id=id_article onmouseover="over(1)" style="color:red">
+            <br>
+            아이디 찾기
+        </article>
+        <article id=pwd_article onmouseover="over(2)" onmouseout="out()" onclick="gopage()" style="color:black">
+            <br>
+            비밀번호 찾기
+        </article>
+    </header>
+    <section id="infor_text">
+        <br>
+        <span style="font-weight:bolder;">
+            아이디 찾기
+            <hr>
+        </span>
+        <span style="font-size:13px;">
+            아이디를 찾고자 하는 이름를 입력해주세요
+        </span>
+    </section>
+
+    <section class="id_find">
+        <article>
+            <form>
+                <input class="name" id="name" type="text" placeholder="이름을 입력해주세요"><br>
+                <input class="name" id="email" type="text" placeholder="이메일을 입력해주세요"><br><br>
+                <input type="button" value="아이디 찾기" onclick="id_find()" style="width:85px; height:30px;">
+            </form>
+            <p id="result"></p>
+        </article>
+    </section>
+    <section class="go_main">
+        <a href="main.html">메인 화면</a>
+    </section>
+</body>
+</html>

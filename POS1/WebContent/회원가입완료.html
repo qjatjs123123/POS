@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>회원가입</title>
+        <style>
+			body{
+			    background-color: whitesmoke;
+			}
+			h2{
+			    font-size: 60px;
+			    color: firebrick;
+			}
+			span{
+			    margin : 5px;
+			}
+			section{
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    min-height: 100vh;
+			}
+			article{
+			    text-align: center;
+			}
+			.table{
+			    margin-left : 100px;
+			    border : 4px solid gainsboro;
+			    font-size: 20px;
+			}
+			.left{
+			    width : 200px;
+			    height : 30px;
+			    padding : 5px;
+			    padding-left: 20px;
+			    padding-bottom: 5px;
+			    text-align : left;
+			}
+			.right{
+			    width : 350px;
+			    padding : 5px;
+			    text-align : left;
+			    padding-left: 20px;
+			    padding-bottom: 8px;
+			}
+			#HELLO{
+			    width : 100%;
+			    text-align: center;
+			    font-size: 25px;
+			}
+			#info{
+			    text-align: left;
+			    font-size: 20px;
+			    margin-left: 100px;
+			    font-weight: bold;
+			} 
+			input{
+			    width: 230px;
+			    height : 40px;
+			    font-size : 15px;
+			    background-color:dimgray;
+			    color:white;
+			    font-weight:700;
+			    border-color : gainsboro;
+			}
+        </style>
+        <script>
+        var list;
+        var request = null;
+        window.onload = function(){
+            list = get_query();           
+            req();           
+        }
+
+
+        function get_query(){
+            var url = document.location.href;
+            var qs = url.substring(url.indexOf('?') + 1).split('&');
+            for(var i = 0, result = {}; i < qs.length; i++){
+                qs[i] = qs[i].split('=');
+                result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+            }
+            return result;
+        }
+
+        function req(){
+            var id = document.getElementById("id");
+            var na = document.getElementById("name");
+            var em = document.getElementById("email");
+            var HE = document.getElementById("HELLO");
+        	localStorage.setItem(list.id+"_count", 0);
+        	localStorage.setItem(list.id+"_today_total", 0);
+            HE.innerHTML = list.id+"님, 환영합니다.";
+            id.innerHTML = list.id;
+            na.innerHTML = list.name;
+            em.innerHTML = list.em;
+        }
+
+        function login(){
+            location.href="main.html";
+        }
+
+
+        </script>
+
+    </head>
+    <body>
+        <section>
+            <article>
+                <h2>회원가입이 완료되었습니다!</h2>
+                <hr>
+                <span id = "HELLO"></span><br>
+                <hr>
+                <br>
+                <p id = "info">가입정보</p>
+                <table class ="table" border ="1" cellspacing = "0">
+                    <tr>
+                        <th class = "left">아이디</th>
+                        <th id = "id" class = "right"></th>
+                    </tr>
+                    <tr>
+                        <th class = "left">이름</th>
+                        <th id = "name" class = "right"></th>
+                    </tr>
+                    <tr>
+                        <th class = "left">이메일</th>
+                        <th id = "email" class = "right"></th>
+                    </tr>
+                </table>
+                <br>
+                <input type="button" value = "로그인 페이지로 가기" onclick ="login()">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </article>
+        </section>
+    </body>
+</html>

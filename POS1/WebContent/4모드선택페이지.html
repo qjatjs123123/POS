@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>메인페이지</title>
+    <style>
+        body{
+            padding:0;margin:0 auto;
+        }
+        header{
+            background-color:#002244; width:100%;height:200px;margin:0 auto;
+        }
+        body{
+            background-color: white;
+        }
+
+
+        #MENU_SECTION{
+
+            width:100%; height:400px;background-color:white; 
+
+        }
+        
+
+        .MENU1{
+             margin:0 auto; position:absolute;left:50%;margin-left:-850px; background-color:orangered; width:350px;height:250px; margin-top:75px; 
+        }
+
+        .MENU2{
+             margin:0 auto; position:absolute;left:50%;margin-left:-150px; background-color:#26BEC5; width:350px;height:250px; margin-top:75px; 
+        }
+
+        .MENU3{
+             margin:0 auto; position:absolute;left:50%;margin-left:50px; background-color:#DD4C19; width:350px;height:250px; margin-top:75px; 
+        }
+        .MENU4{
+             margin:0 auto; position:absolute;left:50%;margin-left:500px; background-color:#E0DBDA; width:350px;height:250px; margin-top:75px; 
+        }
+        .hello{
+            font-size:40px;margin-left:110px;
+        }
+
+        .MENU1_name{
+            margin:0 auto; position:absolute;left:50%;margin-left:-850px; background-color:orangered; width:350px;height:100px; margin-top:325px; 
+            text-align:center;font-size:40px;color:white;
+        }
+        .MENU2_name{
+            margin:0 auto; position:absolute;left:50%;margin-left:-150px; background-color:#26BEC5; width:350px;height:100px; margin-top:325px; 
+            text-align:center;font-size:40px;color:white;
+        }
+        .MENU4_name{
+            margin:0 auto; position:absolute;left:50%;margin-left:500px; background-color:#E0DBDA; width:350px;height:100px; margin-top:325px; 
+            text-align:center;font-size:40px;color:white;
+        }
+
+
+
+    </style>
+    <script>
+    	var id = getParameterByName('id');	    function getParameterByName(name) {
+	        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	                results = regex.exec(location.search);
+	        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	    }
+
+        function start() {
+            beforeafter = document.getElementById('beforeafter');
+            id_date = document.getElementById('date');
+            id_time = document.getElementById('time');
+			host_name = document.getElementById('host');
+			host_name.innerHTML = "아이디 : "+id;
+            var aa = new Date()
+
+            var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+    
+            var today = new Date().getDay();
+            var todayLabel = week[today];
+
+            id_date.innerHTML = aa.getFullYear() + "년 " + (aa.getMonth() + 1) + "월" + aa.getDate() + "일 " + todayLabel;
+
+            if (aa.getHours > 12) {
+                beforeafter.innerHTML = "오후";
+
+                id_time.innerHTML =  aa.getHours() + "시" + aa.getMinutes() + "분"
+            }
+            else {
+                beforeafter.innerHTML = "오전";
+                id_time.innerHTML =  aa.getHours() + "시" + aa.getMinutes() + "분"
+            }
+
+            setInterval(start, 1000);         // setTimeout(“실행할함수”,시간) 시간은1초의 경우 
+
+        }
+        function kitchen(){
+        	location.href = "주방.jsp"+"?id="+id;
+        }
+        function menu(){
+        	location.href = "테이블표.jsp"+"?id="+id;
+        }
+        
+        function manager(){
+        	location.href = "관리자모드.jsp"+"?id="+id;
+        }
+
+    </script>
+
+</head>
+<body onload="start()">
+    <header>
+        <table width="1880px" style="margin-left:80px;padding:40px;">
+            <tr>
+                <td>
+                    <p id="date" style="color:white;font-size:30px;"> </p>
+                </td>
+
+                <td width="500px">
+                    <p id="host" style="color:white;font-size:30px;">상호명</p>
+                </td>
+                <td >
+                    <span id="beforeafter" style="font-size:20px; color:white;"> </span><span id="time" style="color:white;font-size:50px"></span>
+                </td>
+            </tr>
+
+        </table>
+
+    </header>
+
+
+
+
+    <section id="MENU_SECTION">
+        <p class="hello">어서오세요!!</p>
+
+        <article class="MENU1" onclick = "kitchen()">
+            <img src="주방1.png" style="height:200px;width:200px;margin-left:80px;margin-top:50px;" />
+        </article>
+        <article class="MENU1_name" onclick = "kitchen()">
+            주방
+        </article>
+
+
+
+
+        <article class="MENU2" onclick = "menu()">
+            <img src="카운터1.png" style="height:200px;width:200px;margin-left:80px;margin-top:50px;" />
+        </article>
+        <article class="MENU2_name" onclick = "menu()">
+            카운터
+        </article>
+
+  
+
+        <article class="MENU4" onclick = "manager()">
+            <img src="관리자.png" style="height:200px;width:200px;margin-left:80px;margin-top:50px;" />
+        </article>
+
+        <article class="MENU4_name" onclick = "manager()">
+            관리자
+        </article>
+    </section>
+
+
+</body>
+</html>
